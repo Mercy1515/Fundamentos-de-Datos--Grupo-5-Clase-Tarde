@@ -1,0 +1,45 @@
+-- we created the database called: clase1--
+create database clase1
+go
+
+
+-- we changed the master database to use the database we created called: clase1--
+use clase1
+go
+
+-- creation of the table user--
+create table usuario(
+id int,
+direc varchar(30),
+telefono int
+
+)
+go
+
+-- creation of the table product, not to use null values--
+create table producto (
+id int not null,
+nombre varchar (20) not null,
+precio int not null 
+)
+go
+
+-- insert data into the products table--
+insert into producto (id, nombre, precio)
+values
+(1, 'Arroz', 1500),
+(2, 'Frijoles', 1800),
+(3, 'Azúcar', 1200),
+(4, 'Sal', 800),
+(5, 'Aceite', 3500),
+(6, 'Leche', 1400),
+(7, 'Pan', 1000),
+(8, 'Huevos', 2800),
+(9, 'Café', 4500),
+(10, 'Galletas', 1700);
+go
+
+
+-- select all the data from the product table--
+select * from producto
+go
