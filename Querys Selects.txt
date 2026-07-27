@@ -1,0 +1,67 @@
+
+-- Comandos SELECT--
+
+-- para selecionar todos los datos de la tabla-- 
+
+select * from pago  -- este comando es para seleccionar todos los datos de la tabla pago--
+go
+
+
+select * from oficina -- este comando es para seleccionar todos los datos de la tabla oficina--
+go
+
+select * from empleado -- este comando es para seleccionar todos los datos de la tabla empleado--
+go
+
+select * from gama_producto -- este comando es para seleccionar todos los datos de la tabla gama_producto--
+go
+
+select * from cliente -- este comando es para seleccionar todos los datos de la tabla cliente--
+go
+
+
+select * from pedido -- este comando es para seleccionar todos los datos de la tabla pedido--
+go
+
+
+select * from producto -- este comando es para seleccionar todos los datos de la tabla producto--
+go
+
+
+select * from detalle_pedido -- este comando es para seleccionar todos los datos de la tabla detalle_pedido--
+go
+
+
+
+-- Comandos SELECT  para selecionar datos especificos de una tabla-- 
+
+
+select codigo_oficina, ciudad from oficina -- este comando selecciona la columna codigo_oficina y ciudad de la tabla oficina--
+go
+
+
+-- select con where---
+
+select ciudad, telefono from oficina where pais = 'españa'-- este comando selecciona la columna ciudad y telefono de la tabla oficina donde el pais sea igual a españa--
+go  -- alt+39 para comillas simples
+
+select ciudad, telefono from oficina where pais = 'EEUU' -- este comando selecciona la columna ciudad y telefono de la tabla oficina donde el pais sea igual a EEUU--
+go
+
+
+select nombre, apellido1, apellido2, email from empleado where codigo_jefe = 7 -- este comando selecciona las columnas nombre, apellidos y correo de la tabla empleado donde el código del jefe es igua a 7--
+go
+
+
+-- select con NULL---
+
+select nombre, apellido1, apellido2, email from empleado where codigo_jefe is NULL -- este comando selecciona las columnas nombre, apellidos y correo de la tabla empleado donde el código del jefe es igua a nulo--
+go  
+
+
+
+-- select con excluir---
+
+-- se utiliza el operador de negación (<> o !=) para excluir a los representantes de ventas.
+select nombre, apellido1, apellido2, puesto from empleado where puesto <>'Representante Ventas' -- este comando selecciona las columnas nombre, apellidos y correo de la tabla empleado donde el puesto sea diferente al de 'Representante Ventas'--
+go  

@@ -1,0 +1,83 @@
+
+use db_jardineria -- este comando sirve para llamar o usar la base de datos que ya habiamos creado antes.--
+go
+
+select * from cliente -- con * jala todos los datos de la tabla cleinte--
+go
+
+--- comando <> significa diferente a--
+
+select * from cliente where nombre_contacto <> 'Jose';
+go
+
+--- comando = significa igual a --
+
+select * from cliente where nombre_contacto = 'Jose';
+go
+
+-- % like, comando significa a parecido a--
+
+select nombre_contacto from cliente  where nombre_contacto like 'Jose';
+go
+
+
+select nombre_contacto, apellido_contacto, telefono
+from cliente  where nombre_contacto like 'Luis%';
+go
+
+-- % like,que terminen en %an--
+select nombre_contacto
+from cliente  where nombre_contacto like '%an';
+go
+
+-- % like,que empiecen con J--
+select nombre_contacto
+from cliente  where nombre_contacto like 'j%';
+go
+
+-- % like, donde en algun lugar tenga la letra %b%--
+select nombre_contacto
+from cliente  where nombre_contacto like '%b%';
+go
+
+--  Límite menor < o mayor > o mayor igual >= --
+
+select *
+from cliente  where limite_credito > 3000;
+go
+
+
+select *
+from cliente  where limite_credito >= 1000;
+go
+
+-- Con operadores logicos como AND, significa que añade otra caracteristica y se deben cumplir ambas--
+select *
+from cliente  where nombre_contacto = 'Anne'
+and limite_credito > 18;
+go
+
+select *
+from cliente  where limite_credito >=3000  and ciudad = 'Miami';
+go
+
+-- operador lógico OR , combina una o dos más opciones. indica que puede ser una opción o la otra para la búsqueda--
+
+select *
+from cliente  where limite_credito >=3000  or ciudad = 'Miami';
+go
+
+-- para buscar solo campos NULL--
+
+select *
+from cliente  where linea_direccion2 is null;
+go
+
+select nombre_contacto, telefono
+from cliente  where linea_direccion1 is null;
+go
+
+-- comando donde indique que seleccione todas las ciudades menos san francisco. menos un dato--
+select *
+from cliente  where not ciudad= 'san francisco';
+go
